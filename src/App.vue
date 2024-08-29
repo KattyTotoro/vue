@@ -35,5 +35,6 @@ const check = (id:number, check:number) => {
 }
 [data-check="2"] {
   background-color: red;
+  
 }
 </style>
