@@ -23,6 +23,8 @@ const add = () => {
 const check = (id:number, check:number) => {
   const el = arr.value.find(el=>el.id==id)
   el.check = check
+
+  
 }
 
 </script>
