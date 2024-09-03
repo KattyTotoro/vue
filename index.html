@@ -5,10 +5,69 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + Vue + TS</title>
+    <style>
+      .trafficLight {
+        display: flex;
+        max-width: fit-content;
+        background-color: #fbf2e9;
+        padding: 20px;
+       margin: 20px;
+      }
+      
+      .lights{
+        display: flex;
+        justify-content: space-around;
+        padding: 20px;
+        margin-right: 20px;
+        border: 1px solid;
+        border-radius: 10px;
+        gap: 15px;
+      }
+      
+      .l1 {
+        background-color: #8a8a8a;
+        width: 70px;
+        height: 70px;
+        border-radius: 50px;
+      }
+      .l2 {
+        background-color: #ff9600;
+        width: 70px;
+        height: 70px;
+        border-radius: 50px;
+      }
+      .l3 {
+        background-color: #8a8a8a;
+        width: 70px;
+        height: 70px;
+        border-radius: 50px;
+      }
+      
+      .l_button {
+        background-color: #e1e1e1;
+        width: 70px;
+        border: 1px solid;
+        border-radius: 10px;
+        text-transform: uppercase;
+        text-align: center;
+      }
+          </style>
   </head>
   <body>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
+
+    <div class="trafficLight">
+      <div class="lights">
+        <div class="l1"></div>
+        <div class="l2"></div>
+        <div class="l3"></div>
+      </div>
+        <button class="l_button">next</button>
+
+    <div>
+
+    </div>
 
     <div>
       
