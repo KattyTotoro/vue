@@ -1,4 +1,5 @@
 <template>
+  <TrafficLight></TrafficLight>
   <form @submit.prevent="add">
     <input v-model="message" placeholder="todo" />
   </form>
@@ -9,6 +10,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import TrafficLight from './components/TrafficLight.vue'
 
 const message = ref('')
 const arr = ref([] as any[]) 
