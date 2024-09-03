@@ -1,11 +1,10 @@
-
 <template>
-<!-- <div><img :src="" alt=""></div> -->
-<div class="img1"></div>
-<!-- <div>
-<img :src="myImages">
-</div> -->
-<img src="/images/apple.png" alt="">
+   
+
+<!-- <img :src="myImages.image1.src"> -->
+
+    <div class="img1"></div>
+    <img src="/images/mango.png" width="500px" alt="Mango">
 </template>
 
 <script setup lang="ts">
@@ -13,18 +12,18 @@
 
 
 
-// const myImages = [
-// {src:'images/apple.png'},
+const myImages = [{
+image1: {src:'/images/orange.png', alt:'Orange'},
 // // {},
 // // {},
 // // {},
-// ]
+}]
 </script>
 
 <style scoped>
 .img1 {
     background: url(/images/apple.png) center/cover no-repeat;
-   width: 100px;
-    height: 100px;
+    width: 500px;
+    height: 500px;
 }
 </style>
