@@ -6,8 +6,8 @@
 <button class="buttonRight" @click="changeIndexRight"></button>
 </div>
 
-<div class="img1"></div>
-<img src="/images/mango.png" width="500px" alt="Mango">
+<!-- <div class="img1"></div>
+<img src="/images/mango.png" width="500px" alt="Mango"> -->
 </template>
 
 <script setup lang="ts">
