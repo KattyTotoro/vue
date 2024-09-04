@@ -1,7 +1,7 @@
 <template>
    
 
-<!-- <img :src="myImages.image1.src"> -->
+<img :src="myImages[0].src" width="500px">
 
     <div class="img1"></div>
     <img src="/images/mango.png" width="500px" alt="Mango">
@@ -11,13 +11,12 @@
 // import { ref } from 'vue'
 
 
-
-const myImages = [{
-image1: {src:'/images/orange.png', alt:'Orange'},
+let myImages = [
+{image: 1, src: '/images/orange.png', alt: 'Orange'},
 // // {},
 // // {},
 // // {},
-}]
+]
 </script>
 
 <style scoped>
