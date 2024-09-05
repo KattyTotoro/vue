@@ -1,6 +1,7 @@
 <template>
   <TrafficLight></TrafficLight>
   <Pictues></Pictues>
+  <CallUs></CallUs>
   <form @submit.prevent="add">
     <input v-model="message" placeholder="todo" />
   </form>
@@ -13,6 +14,7 @@
 import { ref } from 'vue'
 import TrafficLight from './components/TrafficLight.vue'
 import Pictues from './components/Pictures.vue'
+import CallUs from './components/CallUs.vue';
 
 const message = ref('')
 const arr = ref([] as any[]) 
