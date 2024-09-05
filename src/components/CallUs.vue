@@ -42,6 +42,7 @@ import { ref } from 'vue'
 
 .callUs_div p {
     font-weight: bold;
-    font-size: 22px;
+    font-size: 32px;
+    visibility: hidden;
 }
 </style>
