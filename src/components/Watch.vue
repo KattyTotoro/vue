@@ -1,9 +1,12 @@
 <template>
 
-    <div class="callUs_div">
-        <button id="callUs_button">Позвонить</button>
-        <p>8-922-323-232</p>
+<div class="clouds">
+    <div class="watch">
+      <div class="hours"><img src="/images/Hour.png" height="150px" alt=""></div>
+      <div class="minutes"><img src="/images/minutes.png" height="180px" alt=""></div>
+      <div class="seconds"><img src="/images/seconds.png" height="230px" alt=""></div>
     </div>
+  </div>
 
     <h1>{{hours}}</h1>
     <h1>{{minutes}}</h1>
@@ -22,34 +25,74 @@ const minutes = date.getMinutes()
 </script>
 
 <style scoped>
-.callUs_div {
-    max-width: fit-content;
-    text-align: center;
-}
+.clouds {
+      width: 500px;
+      height: 500px;
+      margin: 0 auto;
+      margin-top: 50px;
+      background-color: #b6cbe8;
+      border-radius: 50%;
+      background-image: url(images/cloud.png), url(images/cloud.png), url(images/cloud.png);
+      /* background-repeat: no-repeat, no-repeat; */
+      background-position: 20% 50%, 0% 20%, 50% 100%;
+      background-size: 100%, 50%, 40%;
+      /* background: url(images/training/cloud.png) 0 0/500px no-repeat, url(images/bg10.png) 100% 100%/350px no-repeat #b6cbe8; */
 
-#callUs_button {
-    display: block;
-    background: rgb(65, 65, 106);
-    color: rgb(255, 255, 255);
-    padding: 20px;
-    margin: 20px;
-    margin-top: 50px;
-    font-size: 22px;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 15px;
-    text-transform: uppercase;
-    transition: .5s;
-}
+      animation: cloud 280s linear infinite;
+    }
 
-#callUs_button:hover {
-    transform: scale(1.2);
-    transition: .5s;
-}
+     .watch {
+      background: url(images/clock_face.png) center/cover no-repeat;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      position: relative;
+    }
 
-.callUs_div p {
-    font-weight: bold;
-    font-size: 32px;
-    visibility: hidden;
-}
+    .hours {
+      position: absolute;
+      left: calc(47% - (3px/2));
+      top: 112px;
+      transform-origin: 50% 86%;
+      animation: time 86400s linear infinite;
+    }
+
+    .minutes {
+      position: absolute;
+      left: 47%;
+      top: 80px;
+      transform-origin: 50% 89%;
+      animation: time 3600s linear infinite;
+    }
+
+    .seconds {
+      position: absolute;
+      left: calc(47% + (3px/2));
+      top: 30px;
+      transform-origin: 50% 92%;
+      animation: time 60s linear infinite;
+      /* animation: time 60s steps(60) infinite; */
+    }
+
+    @keyframes time {
+      from {
+        transform: rotate(0);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+   
+
+    @keyframes cloud {
+      from {
+        background-position-x: -1000px, -800px, -500px;
+      }
+
+      to {
+        background-position-x: 2000px, 1800px, 1500px;
+      }
+    }
 </style>
