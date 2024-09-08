@@ -8,8 +8,8 @@
       <!-- <div class="seconds"><img src="/images/seconds.png" height="230px" alt=""></div> -->
     </div>
   </div>
-<!-- 
-    <h1>{{hours}}</h1>
+
+    <!-- <h1>{{hours}}</h1>
     <h1>{{minutes}}</h1>
     <h1>{{seconds}}</h1>
     <h1>{{num_hours}}</h1> -->
@@ -22,16 +22,20 @@ import { ref } from 'vue'
 let num_hours = ref(0) as any
 let num_minutes = ref(0) as any
 let num_seconds = ref(0) as any
+let seconds = ref(0) as any
+let minutes = ref(0) as any
+let hours = ref(0) as any
 
 let date = new Date()
-let hours = date.getHours()
+hours = date.getHours()
 hours = hours % 12
 // hours = (hours > 12) ? hours = hours - 12 : hours
-let minutes = date.getMinutes()
-let seconds = date.getSeconds()
+minutes = date.getMinutes()
+seconds = date.getSeconds()
+
 num_seconds.value = seconds * 360 / 60
 num_minutes.value = (minutes * 360 / 60) + (seconds * 0.1)
-num_hours.value = (hours * 360 / 12) + ((minutes * 60) * 0.0017)
+num_hours.value = (hours * 360 / 12) + ((minutes * 60) * 0.006)
 
 
 
@@ -89,7 +93,7 @@ num_hours.value = (hours * 360 / 12) + ((minutes * 60) * 0.0017)
     }
 
     @keyframes time {      
-    to {
+    100% {
         transform: rotate(360deg);
       }
     }

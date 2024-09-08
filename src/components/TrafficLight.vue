@@ -16,7 +16,7 @@ const num = ref(1)
 
 function changeColor() {
     num.value++
-    if (num.value==3) num.value = 0
+    if (num.value == 3) num.value = 0
 }
 
 </script>
