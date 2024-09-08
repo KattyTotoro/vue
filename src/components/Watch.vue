@@ -16,8 +16,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const date = new Date()
-const hours = date.getHours()
+let date = new Date()
+let hours = date.getHours()
+hours = (hours > 12) ? hours = hours - 12 : hours
 const minutes = date.getMinutes()
 
 // x градусов = hours * 360 / 12
