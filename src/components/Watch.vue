@@ -5,7 +5,11 @@
       <div class="hours" :style="'transform: rotate(' + num_hours + 'deg);'"><img src="/images/Hour.png" height="150px" alt=""></div>
       <div class="minutes" :style="'transform: rotate(' + num_minutes + 'deg);'"><img src="/images/minutes.png" height="180px" alt=""></div>
       <div class="seconds" :style="'transform: rotate(' + num_seconds + 'deg);'"><img src="/images/seconds.png" height="230px" alt=""></div>
+      
+      <!-- <div class="seconds2" :style="'transform: rotate(' + num_seconds + 'deg); animation: time2 6s linear infinite;'" v-@keyframes="'time2{ from {transform: rotate(' + num_seconds + 'deg);} to {transform: rotate(360deg);}}'"><img src="/images/seconds.png" height="230px" alt=""></div> -->
+      <!-- <div :@keyframes="'time2{ from {transform: rotate(' + num_seconds + 'deg);} to {transform: rotate(360deg);}}'" class="seconds2" :style="'transform: rotate(' + num_seconds + 'deg); @keyframes time2{ from {transform: rotate(' + num_seconds + 'deg);} to {transform: rotate(360deg);}}; animation: time2 6s linear infinite;'"><img src="/images/seconds.png" height="230px" alt=""></div> -->
       <!-- <div class="seconds"><img src="/images/seconds.png" height="230px" alt=""></div> -->
+      <!-- <div :style="'@keyframes time2{' + pr_seconds + 'deg{transform: rotate(360deg);}}'"></div> -->
     </div>
   </div>
 
@@ -36,8 +40,6 @@ seconds = date.getSeconds()
 num_seconds.value = seconds * 360 / 60
 num_minutes.value = (minutes * 360 / 60) + (seconds * 0.1)
 num_hours.value = (hours * 360 / 12) + ((minutes * 60) * 0.006)
-
-
 
 </script>
 
@@ -89,6 +91,15 @@ num_hours.value = (hours * 360 / 12) + ((minutes * 60) * 0.006)
       top: 30px;
       transform-origin: 50% 92%;
       animation: time 60s linear infinite;
+      /* animation: time 60s steps(60) infinite; */
+    }
+
+    .seconds2 {
+      position: absolute;
+      left: calc(47% + (3px/2));
+      top: 30px;
+      transform-origin: 50% 92%;
+      animation: time2 60s linear infinite;
       /* animation: time 60s steps(60) infinite; */
     }
 
