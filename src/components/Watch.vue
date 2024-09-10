@@ -4,7 +4,9 @@
     <div class="watch">
       <div class="hours" :style="'transform: rotate(' + num_hours + 'deg);'"><img src="/images/Hour.png" height="150px" alt=""></div>
       <div class="minutes" :style="'transform: rotate(' + num_minutes + 'deg);'"><img src="/images/minutes.png" height="180px" alt=""></div>
-      <div class="seconds" :style="'transform: rotate(' + num_seconds + 'deg);'"><img src="/images/seconds.png" height="230px" alt=""></div>
+    <div class="seconds_wrapper" :style="'transform: rotate(' + num_seconds + 'deg);'">
+      <div class="seconds"><img src="/images/seconds.png" height="230px" alt=""></div>
+    </div>
       
       <!-- <div class="seconds2" :style="'transform: rotate(' + num_seconds + 'deg); animation: time2 6s linear infinite;'" v-@keyframes="'time2{ from {transform: rotate(' + num_seconds + 'deg);} to {transform: rotate(360deg);}}'"><img src="/images/seconds.png" height="230px" alt=""></div> -->
       <!-- <div :@keyframes="'time2{ from {transform: rotate(' + num_seconds + 'deg);} to {transform: rotate(360deg);}}'" class="seconds2" :style="'transform: rotate(' + num_seconds + 'deg); @keyframes time2{ from {transform: rotate(' + num_seconds + 'deg);} to {transform: rotate(360deg);}}; animation: time2 6s linear infinite;'"><img src="/images/seconds.png" height="230px" alt=""></div> -->
@@ -73,7 +75,6 @@ num_hours.value = (hours * 360 / 12) + ((minutes * 60) * 0.006)
       left: calc(47% - (3px/2));
       top: 112px;
       transform-origin: 50% 86%;
-      transform: rotate(0);
       animation: time 43200s linear infinite;
     }
 
@@ -85,10 +86,18 @@ num_hours.value = (hours * 360 / 12) + ((minutes * 60) * 0.006)
       animation: time 3600s linear infinite;
     }
 
-    .seconds {
+    .seconds_wrapper {
       position: absolute;
+      width: 28px;
+      height: 236px;
       left: calc(47% + (3px/2));
       top: 30px;
+      transform-origin: 50% 92%;
+      
+    }
+
+    .seconds {
+      position: absolute;
       transform-origin: 50% 92%;
       animation: time 60s linear infinite;
       /* animation: time 60s steps(60) infinite; */
