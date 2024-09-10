@@ -1,17 +1,20 @@
 <template>
 
     <div class="callUs_div">
-        <button id="callUs_button">Позвонить</button>
-        <p>8-922-323-232</p>
+        <button id="callUs_button" @click="CallUs">Позвонить</button>
+        <p :style="!showPhoneNumber? 'visibility: hidden;' : ''">8-922-323-232</p>
     </div>
 
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-let num = false
 
+const showPhoneNumber = ref(false)
 
+function CallUs() {
+    showPhoneNumber.value = true
+}
 
 
 </script>
@@ -45,6 +48,5 @@ let num = false
 .callUs_div p {
     font-weight: bold;
     font-size: 32px;
-    visibility: hidden;
 }
 </style>
