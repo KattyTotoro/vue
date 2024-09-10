@@ -2,9 +2,11 @@
 
   <div class="clouds">
     <div class="watch">
-
-      <div class="hours" :style="'transform: rotate(' + num_hours + 'deg);'"><img src="/images/Hour.png" height="150px"
+ 
+<div class="hours_wrapper" :style="'transform: rotate(' + num_hours + 'deg);'">
+      <div class="hours"><img src="/images/Hour.png" height="150px"
           alt=""></div>
+</div>
 
       <div class="minutes_wrapper" :style="'transform: rotate(' + num_minutes + 'deg);'">
         <div class="minutes"><img src="/images/minutes.png"
@@ -77,10 +79,17 @@ num_hours.value = (hours * 360 / 12) + ((minutes * 60) * 0.006)
   position: relative;
 }
 
-.hours {
+.hours_wrapper {
   position: absolute;
+  width: 41px;
+  height: 156px;
   left: calc(47% - (3px/2));
   top: 112px;
+  transform-origin: 50% 86%;
+}
+
+.hours {
+  position: absolute;
   transform-origin: 50% 86%;
   animation: time 43200s linear infinite;
 }
