@@ -2,7 +2,10 @@
 
     <div class="callUs_div">
         <button id="callUs_button" @click="CallUs">Позвонить</button>
-        <p :style="!showPhoneNumber? 'visibility: hidden;' : ''">8-922-323-232</p>
+        <transition mode="out-in">
+            <p style="height:48px" v-if="!showPhoneNumber">8-9**-***-***</p>
+            <p v-else>8-922-323-232</p>
+        </transition>
     </div>
 
 </template>
@@ -13,13 +16,24 @@ import { ref } from 'vue'
 const showPhoneNumber = ref(false)
 
 function CallUs() {
-    showPhoneNumber.value = true
+    showPhoneNumber.value = !showPhoneNumber.value
 }
 
 
 </script>
 
 <style scoped>
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+
 .callUs_div {
     max-width: fit-content;
     text-align: center;
