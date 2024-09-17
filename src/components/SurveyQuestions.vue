@@ -11,8 +11,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-// let question = ''
-// let points = 0
+let question = ref('')
+let points = ref(0)
 
 // question = prompt('Вопрос 1. Сколько звёзд в Солнечной системе. \n a. Сотни миллиардов \n b. Одна \n c. Примерно один миллион') as string
 
