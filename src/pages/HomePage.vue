@@ -1,7 +1,7 @@
 <template>
   <h1>Home</h1>
   <TrafficLight></TrafficLight>
-  <Pictues></Pictues>
+  <Pictures></Pictures>
   <CallUs></CallUs>
   <Watch></Watch>
   <form @submit.prevent="add">
@@ -16,7 +16,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import TrafficLight from '../components/TrafficLight.vue'
-import Pictues from '../components/Pictures.vue'
+import Pictures from '../components/Pictures.vue'
 import CallUs from '../components/CallUs.vue';
 import Watch from '../components/Watch.vue';
 
