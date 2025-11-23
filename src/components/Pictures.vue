@@ -40,6 +40,7 @@ function changeIndexLeft() {
     flex-wrap: nowrap;
     align-content: center;
     align-items: center;
+    justify-content: center;
     gap: 80px;
     margin-top: 100px;
     margin-bottom: 100px;

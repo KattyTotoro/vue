@@ -4,6 +4,7 @@
   <Pictures></Pictures>
   <CallUs></CallUs>
   <Watch></Watch>
+  <TrainingOne></TrainingOne>
   <form @submit.prevent="add">
     <input v-model="message" placeholder="todo" />
   </form>
@@ -19,7 +20,7 @@ import TrafficLight from '../components/TrafficLight.vue'
 import Pictures from '../components/Pictures.vue'
 import CallUs from '../components/CallUs.vue';
 import Watch from '../components/Watch.vue';
-
+import TrainingOne from '../components/TrainingOne.vue';
 const message = ref('')
 const arr = ref([] as any[])
 
