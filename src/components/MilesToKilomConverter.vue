@@ -8,7 +8,7 @@
   <div class="converter">
     <div>
       <p>Введите значение в километрах:</p>
-      <input class="userImput" type="text">
+      <input v-model.number="distanceInKm" class="userImput" type="number">
     </div>
     <div>
       <p>Результат в милях:</p>
@@ -25,11 +25,12 @@ let mileage = ref(0) as any
 
 const KILOMETERS_IN_ONE_MILE = 1.609344
 
-distanceInKm = 2
+// distanceInKm = 2
+
 
 mileage = distanceInKm / KILOMETERS_IN_ONE_MILE
 
-console.log(distanceInKm, 'км равно ', mileage, 'миль')
+
 
 
 </script>
