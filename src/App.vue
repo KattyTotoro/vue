@@ -1,7 +1,8 @@
 <template>
   <RouterLink to="/">Home</RouterLink><br>
   <RouterLink to="/about">About</RouterLink><br>
-  <RouterLink to="/myPage">My new page</RouterLink>
+  <RouterLink to="/myPage">My new page</RouterLink><br>
+  <RouterLink to="/tasks">Tasks</RouterLink>
 <router-view></router-view>
 
 
