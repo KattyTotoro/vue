@@ -2,12 +2,14 @@
   <TrainingOne></TrainingOne>
   <TrainingTwo></TrainingTwo>
   <TrainingThree></TrainingThree>
+  <TrainingFour></TrainingFour>
 </template>
 
 <script setup lang="ts">
 import TrainingOne from '../components/TrainingOne.vue';
 import TrainingTwo from '../components/TrainingTwo.vue';
 import TrainingThree from '../components/TrainingThree.vue';
+import TrainingFour from '#root/components/TrainingFour.vue';
 
 </script>
 
