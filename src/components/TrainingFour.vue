@@ -19,10 +19,28 @@
 
 <form @submit.prevent>
   <input class="training" type="text" v-model="userPassword" placeholder="Введите пароль">
-  <p :style="topLetter?'color:green':'color:red'">символы в верхнем регистре</p>
-  <p :style="`color:${lowLetter?'green':'red'}`">символы в нижнем регистре</p>
-  <p :class="number?'color-green':'color-red'">цифры</p>
-  <p :class="{'color-green':minLength, 'color-red':!minLength}">минимальная длинна 8 символов</p>
+  
+  <p :style="topLetter?'color:green':'color:red'">
+  <img :class="topLetter?'visible':'invisible'" src="/images/light2.webp" width="40" alt="" style="margin-bottom: -10px;">
+  символы в верхнем регистре
+  </p>
+
+  <p :style="`color:${lowLetter?'green':'red'}`">
+  <img :class="lowLetter?'visible':'invisible'" src="/images/light2.webp" width="40" alt="" style="margin-bottom: -10px;">
+  символы в нижнем регистре
+  </p>
+
+  <p :class="number?'color-green':'color-red'">
+  <img :class="number?'visible':'invisible'" src="/images/light2.webp" width="40" alt="" style="margin-bottom: -10px;">
+  цифры
+  </p>
+
+  <p :class="{'color-green':minLength, 'color-red':!minLength}">
+  <img :class="minLength?'visible':'invisible'" src="/images/light2.webp" width="40" alt="" style="margin-bottom: -10px;">
+  минимальная длинна 8 символов
+  </p>
+
+  <!-- <p :class="minLength?'color-green':'color-red'">минимальная длинна 8 символов</p> -->
   <button class="training" :disabled="isDisabled">Зарегистрировать</button>
 </form>
 
@@ -48,7 +66,31 @@ watch(userPassword, async (pass)=>{
   const numberTest = new RegExp(/[0-9]/)
   number.value = numberTest.test(pass)
 
+  const minLengthTest = new RegExp(/.{8,}/)
+  minLength.value = minLengthTest.test(pass)
+
+  
+
+  if(topLetter.value == true && lowLetter.value == true && number.value == true && minLength.value == true) {
+    isDisabled.value = false
+  }
+
+//   const checkIsDisabled = ()=>{
+//   if(topLetter.value == true && lowLetter.value == true && number.value == true && minLength.value == true) {
+//     isDisabled.value = false
+//   }
+// }
+
+// const IsDisabledTest = new RegExp(//)
+//   isDisabled.value = IsDisabledTest.test(pass)
+
 })
+
+// const checkIsDisabled = ()=>{
+//   if(topLetter.value == true && lowLetter.value == true) {
+//     isDisabled.value = false
+//   }
+// }
 </script>
 
 
@@ -74,6 +116,14 @@ watch(userPassword, async (pass)=>{
   font-size: 28px;
   font-weight: 600;
   margin: 20px;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
 }
 
 </style>
