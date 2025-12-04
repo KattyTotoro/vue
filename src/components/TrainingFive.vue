@@ -143,6 +143,5 @@ const send = ()=>{
   border-radius: 10px;
   flex: 0 0 120px;
   padding: 5px;
-
 }
 </style>
