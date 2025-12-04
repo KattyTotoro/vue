@@ -66,13 +66,15 @@ watch(userPassword, async (pass)=>{
   const numberTest = new RegExp(/[0-9]/)
   number.value = numberTest.test(pass)
 
-  const minLengthTest = new RegExp(/.{8,}/)
-  minLength.value = minLengthTest.test(pass)
-
+  // const minLengthTest = new RegExp(/.{8,}/)
+  // minLength.value = minLengthTest.test(pass)
+  minLength.value = pass.length>=8
   
 
-  if(topLetter.value == true && lowLetter.value == true && number.value == true && minLength.value == true) {
+  if(topLetter.value && lowLetter.value && number.value && minLength.value) {
     isDisabled.value = false
+  } else {
+    isDisabled.value = true
   }
 
 //   const checkIsDisabled = ()=>{
