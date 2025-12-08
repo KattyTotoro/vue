@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
 import {ref} from 'vue'
-const cards = ref([
+const cardsRefence = [
   {type:1, value:6, status:1},
   {type:1, value:7, status:1},
   {type:1, value:8, status:1},
@@ -58,7 +58,8 @@ const cards = ref([
   {type:4, value:12, status:1},
   {type:4, value:13, status:1},
   {type:4, value:14, status:1},
-] as any[])
+]
+const cards = ref([...cardsRefence] as any[])
 const types = {
   1:'♣️',
   2:'♦️',
