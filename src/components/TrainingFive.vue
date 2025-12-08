@@ -1,5 +1,5 @@
 <template>
-
+  <button @click="send4all">Раздать</button>
   <div class="user1">
     <div style="display:flex; margin: 10px auto; gap:10px; min-height: 200px;">
       <div class="card" v-for="card of users[1]" :key="card.type+''+card.value">
@@ -126,6 +126,19 @@ const send = ()=>{
     currUser = 2
   } else {
     currUser = 1
+  }
+}
+
+const send4all = () => {
+  for (let i=0;i<12;i++) {
+    const card = cards.value.pop()
+    card.status=1
+    users.value[currUser].push(card)
+    if (currUser==1) {
+      currUser = 2
+    } else {
+      currUser = 1
+    }
   }
 }
 
