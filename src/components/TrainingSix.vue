@@ -1,10 +1,10 @@
 <template>
   <button @click="shuffle">Перемешать</button>
-  <button>По возрастанию</button>
-  <button>По убыванию</button>
-  <button>Только красные</button>
-  <button>Только черные</button>
-  <button>Только тузы</button>
+  <button @click="sortInAscending">По возрастанию</button>
+  <button @click="sortInDescending">По убыванию</button>
+  <button @click="sortRed">Только красные</button>
+  <button @click="sortBlack">Только черные</button>
+  <button @click="sortAces">Только тузы</button>
   <TransitionGroup style="position:relative; margin: 10px auto; height: 210px" name="cards" tag="div">
     <div class="card" :style="`position:absolute; left:${i*25}px; z-index:${i+1}`" v-for="card, i of cards" :key="card.type+''+card.value">
       <template v-if="card.status">
@@ -61,9 +61,9 @@ const cardsRefence = [
 ]
 const cards = ref([...cardsRefence] as any[])
 const types = {
-  1:'♣️',
-  2:'♦️',
-  3:'♥️',
+  1:'♦️',
+  2:'♥️',
+  3:'♣️',
   4:'♠️',
 } as any
 const values = {
@@ -79,6 +79,7 @@ function randomInteger(min:number, max:number) {
 }
 
 function shuffle() {
+  cards.value = cardsRefence
   const max = cards.value.length-1
   for (let i=0; i<500; i++) {
     const x = randomInteger(0,max)
@@ -86,6 +87,28 @@ function shuffle() {
     const card = cards.value.splice(x,1)
     cards.value.splice(y,0,card[0])
   }
+}
+
+const sortRed = ()=>{
+  cards.value = cardsRefence.filter(el=>el.type==1 || el.type==2)
+}
+
+const sortBlack = ()=>{
+  cards.value = cardsRefence.filter(el=>el.type==3 || el.type==4)
+}
+
+const sortAces = ()=>{
+  cards.value = cardsRefence.filter(el=>el.value==14)
+}
+
+const sortInAscending = ()=>{
+  cards.value = cardsRefence
+  cards.value.sort((a,b)=>a.type**3*a.value-b.type**3*b.value)
+}
+
+const sortInDescending = ()=>{
+  cards.value = cardsRefence
+  cards.value.sort((a,b)=>b.type**3*b.value-a.type**3*a.value)
 }
 
 </script>
