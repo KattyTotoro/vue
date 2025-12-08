@@ -1,5 +1,10 @@
 <template>
   <button @click="shuffle">Перемешать</button>
+  <button>По возрастанию</button>
+  <button>По убыванию</button>
+  <button>Только красные</button>
+  <button>Только черные</button>
+  <button>Только тузы</button>
   <TransitionGroup style="position:relative; margin: 10px auto; height: 210px" name="cards" tag="div">
     <div class="card" :style="`position:absolute; left:${i*25}px; z-index:${i+1}`" v-for="card, i of cards" :key="card.type+''+card.value">
       <template v-if="card.status">
