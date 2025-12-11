@@ -1,4 +1,6 @@
 <template>
+<h1>Задача 6</h1>
+
   <button @click="shuffle">Перемешать</button>
   <button @click="sortInAscending">По возрастанию</button>
   <button @click="sortInDescending">По убыванию</button>

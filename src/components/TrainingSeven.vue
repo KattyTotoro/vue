@@ -1,7 +1,8 @@
 <template>
-  <h1>Задача 5</h1>
+<h1>Задача 7</h1>
+<h2>Игра 21</h2>
 
-  <button @click="send4all">Раздать</button>
+  <button @click="send4all">Начать игру</button>
   <div class="user1">
     <div style="display:flex; margin: 10px auto; gap:10px; min-height: 200px;">
       <div class="card" v-for="card of users[1]" :key="card.type+''+card.value">
@@ -56,37 +57,37 @@ const cards = ref([
   {type:1, value:8, status:0},
   {type:1, value:9, status:0},
   {type:1, value:10, status:0},
-  {type:1, value:11, status:0},
-  {type:1, value:12, status:0},
-  {type:1, value:13, status:0},
-  {type:1, value:14, status:0},
+  {type:1, value:2, status:0},
+  {type:1, value:3, status:0},
+  {type:1, value:4, status:0},
+  {type:1, value:1, status:0},
   {type:2, value:6, status:0},
   {type:2, value:7, status:0},
   {type:2, value:8, status:0},
   {type:2, value:9, status:0},
   {type:2, value:10, status:0},
-  {type:2, value:11, status:0},
-  {type:2, value:12, status:0},
-  {type:2, value:13, status:0},
-  {type:2, value:14, status:0},
+  {type:2, value:2, status:0},
+  {type:2, value:3, status:0},
+  {type:2, value:4, status:0},
+  {type:2, value:1, status:0},
   {type:3, value:6, status:0},
   {type:3, value:7, status:0},
   {type:3, value:8, status:0},
   {type:3, value:9, status:0},
   {type:3, value:10, status:0},
-  {type:3, value:11, status:0},
-  {type:3, value:12, status:0},
-  {type:3, value:13, status:0},
-  {type:3, value:14, status:0},
+  {type:3, value:2, status:0},
+  {type:3, value:3, status:0},
+  {type:3, value:4, status:0},
+  {type:3, value:1, status:0},
   {type:4, value:6, status:0},
   {type:4, value:7, status:0},
   {type:4, value:8, status:0},
   {type:4, value:9, status:0},
   {type:4, value:10, status:0},
-  {type:4, value:11, status:0},
-  {type:4, value:12, status:0},
-  {type:4, value:13, status:0},
-  {type:4, value:14, status:0},
+  {type:4, value:2, status:0},
+  {type:4, value:3, status:0},
+  {type:4, value:4, status:0},
+  {type:4, value:1, status:0},
 ] as any[])
 const types = {
   1:'♣️',
@@ -95,10 +96,10 @@ const types = {
   4:'♠️',
 } as any
 const values = {
-  11:'В',
-  12:'Д',
-  13:'К',
-  14:'А',
+  2:'В',
+  3:'Д',
+  4:'К',
+  1:'А',
 } as any
 
 function randomInteger(min:number, max:number) {
@@ -133,7 +134,7 @@ const send = ()=>{
 }
 
 const send4all = () => {
-  for (let i=0;i<12;i++) {
+  for (let i=0;i<3;i++) {
     const card = cards.value.pop()
     card.status=1
     users.value[currUser].push(card)

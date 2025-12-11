@@ -5,6 +5,7 @@
   <TrainingFour></TrainingFour>
   <TrainingFive></TrainingFive>
   <TrainingSix></TrainingSix>
+  <TrainingSeven></TrainingSeven>
 </template>
 
 <script setup lang="ts">
@@ -14,6 +15,7 @@ import TrainingThree from '../components/TrainingThree.vue';
 import TrainingFour from '#root/components/TrainingFour.vue';
 import TrainingFive from '#root/components/TrainingFive.vue';
 import TrainingSix from '#root/components/TrainingSix.vue';
+import TrainingSeven from '#root/components/TrainingSeven.vue';
 
 </script>
 
