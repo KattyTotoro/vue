@@ -33,10 +33,18 @@
   <li v-for="el of filtredCities" :key="el">{{ el }}</li>
 </ul>
 
+<button @click="counter.decrement">-</button>
+{{ counter.count }}
+<button @click="counter.increment">+</button>
+<button @click="counter.reset">reset</button>
+
 </template>
 
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue'
+import useCounter from '#root/coposables/useCounter'
+
+const counter = useCounter()
 const search = ref('')
 const cities = ["Екатеринбург", "Москва", "Санкт-Петербург", "Сочи"]
 const filtredCities = ref([...cities])
