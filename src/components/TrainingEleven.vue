@@ -1,9 +1,10 @@
 <template>
-  <h1>Задача 11</h1>
+  <h1><slot name='title'></slot></h1>
 
   <div>
   <p>
   Создайте сложную форму валидации:
+
 
 Используйте ref для объекта формы с полями: email, password, confirmPassword
 Создайте вычисляемые свойства для валидации каждого поля
@@ -13,29 +14,12 @@
   </p>
   </div>
 
-<form @submit.prevent>
-  <input class="training" type="email" v-model="user.email" placeholder="Введите электронную почту"> {{ user.email }}
-  <input class="training" type="text" v-model="user.password" placeholder="Введите пароль"> {{ user.password }}
-  <input class="training" type="text" v-model="user.confirmPassword" placeholder="Повторите пароль"> {{ user.confirmPassword }}
+  <slot></slot>
 
-  <button class="training" :disabled="isDisabled">Зарегистрировать</button>
-</form>
-
+<slot name='footer'></slot>
 </template>
 
 <script setup lang="ts">
-import {ref, computed} from 'vue'
-
-const isDisabled = ref(true)
-
-const user = ref({
-  email: '',
-  password: '',
-  confirmPassword: '',
-})
-
-
-
 
 </script>
 

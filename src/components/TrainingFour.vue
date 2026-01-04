@@ -55,6 +55,7 @@ const lowLetter = ref(false)
 const number = ref(false)
 const minLength = ref(false)
 
+
 watch(userPassword, async (pass)=>{
 
   const topLetterTest = new RegExp(/[A-Z]/)

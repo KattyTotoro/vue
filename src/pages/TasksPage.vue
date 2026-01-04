@@ -9,7 +9,7 @@
   <TrainingEight></TrainingEight>
   <TrainingNine></TrainingNine>
   <TrainingTen></TrainingTen>
-  <TrainingEleven></TrainingEleven>
+  <TrainingTwelve></TrainingTwelve>
 </template>
 
 <script setup lang="ts">
@@ -23,7 +23,8 @@ import TrainingSeven from "#root/components/TrainingSeven.vue";
 import TrainingEight from "#root/components/TrainingEight.vue";
 import TrainingNine from "#root/components/TrainingNine.vue";
 import TrainingTen from "#root/components/TrainingTen.vue";
-import TrainingEleven from "#root/components/TrainingEleven.vue";
+// import TrainingEleven from "#root/components/TrainingEleven.vue";
+import TrainingTwelve from "#root/components/TrainingTwelve.vue";
 </script>
 
 <style scoped>
