@@ -10,6 +10,25 @@
   <TrainingNine></TrainingNine>
   <TrainingTen></TrainingTen>
   <TrainingTwelve></TrainingTwelve>
+
+  <CardComponent userStyle="text-align: left; font-size: 22px; font-weight: 600; color: darkgreen; background: lightblue; padding: 20px;" title="Приветствие!">
+    <p>Добро пожаловать во Vue 3!!!!</p>
+  </CardComponent>
+
+  <LayoutComponent userStyle="text-align: center; font-size: 22px; font-weight: 600; color: darkgreen; background: lightblue; padding: 20px;" title="Приветствие!">
+    <template #header>
+      <div>Объявление!</div>
+    </template>
+    <template #footer>
+      <div>Администрация</div>
+    </template>
+    <div>Внимание! Запрещено! Прекратить!</div>
+  </LayoutComponent>
+
+  <FormInput></FormInput>
+
+  <TrainingThirteen></TrainingThirteen>
+
 </template>
 
 <script setup lang="ts">
@@ -25,6 +44,13 @@ import TrainingNine from "#root/components/TrainingNine.vue";
 import TrainingTen from "#root/components/TrainingTen.vue";
 // import TrainingEleven from "#root/components/TrainingEleven.vue";
 import TrainingTwelve from "#root/components/TrainingTwelve.vue";
+import CardComponent from "#root/components/CardComponent.vue";
+import LayoutComponent from "#root/components/LayoutComponent.vue";
+import FormInput from "#root/components/FormInput.vue";
+import TrainingThirteen from "#root/components/TrainingThirteen.vue";
+const title = `fhkjs
+gkjdf
+lnsdkjfsd`
 </script>
 
 <style scoped>
