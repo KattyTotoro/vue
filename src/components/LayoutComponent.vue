@@ -1,4 +1,5 @@
 <template>
+  <div>Компонент Layout</div>
   <!-- Создайте компонент Layout с:
 Слотом header (верхняя часть)
 Default slot (основной контент)

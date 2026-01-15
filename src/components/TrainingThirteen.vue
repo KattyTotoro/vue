@@ -1,1 +1,1 @@
-<template>GHJGGGGGGGGGGH</template>
+<template></template>
