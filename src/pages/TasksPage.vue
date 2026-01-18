@@ -15,14 +15,16 @@
     <p>Добро пожаловать во Vue 3!!!!</p>
   </CardComponent>
 
-  <LayoutComponent userStyle="text-align: center; font-size: 22px; font-weight: 600; color: darkgreen; background: lightblue; padding: 20px;" title="Приветствие!">
+  <LayoutComponent userStyle="text-align: center; font-size: 22px; font-weight: 600; color: darkgreen; background: lightblue; padding: 20px;">
     <template #header>
       <div>Объявление!</div>
+    </template>
+    <template #default>
+      <div>Внимание! Запрещено! Прекратить!</div>
     </template>
     <template #footer>
       <div>Администрация</div>
     </template>
-    <div>Внимание! Запрещено! Прекратить!</div>
   </LayoutComponent>
 
   <FormInput v-model="text1" userStyle="text-align: center; font-size: 22px; font-weight: 600; color: darkgreen; background: lightblue; padding: 20px;"></FormInput>
@@ -36,9 +38,26 @@
 
     <!-- <UserForm v-model:firstName="firstName" v-model:lastName="lastName" v-model:email="email"></UserForm>
     {{ firstName }} / {{ lastName }} / {{ email }} -->
-    <UserForm v-model="user"></UserForm>
+    <UserForm v-model="user" userStyle="text-align: center; font-size: 22px; font-weight: 600; color: darkgreen; background: lightblue; padding: 20px;"></UserForm>
     {{ user.firstName }} / {{ user.lastName }} / {{ user.email }}
 
+  <EditableList v-model="arr">
+    <template #header><p>Заголовок</p></template>
+    <template #empty><p>Список пуст</p></template>
+  </EditableList>
+
+  <UserCard :userId="userId" :userName="userName" :userEmail="userEmail">
+  <template #default>
+  ||{{ userId }} / {{ userName }} / {{ userEmail }}||
+  </template>
+
+  <template #actions>
+  <button>Режактировать</button>
+  <button>Удалить</button>
+  </template>
+  
+  </UserCard>
+  
   <TrainingThirteen></TrainingThirteen>
 
 </template>
@@ -61,6 +80,8 @@ import CardComponent from "#root/components/CardComponent.vue";
 import LayoutComponent from "#root/components/LayoutComponent.vue";
 import FormInput from "#root/components/FormInput.vue";
 import UserForm from "#root/components/UserForm.vue";
+import EditableList from "#root/components/EditableList.vue";
+import UserCard from "#root/components/UserCard.vue";
 import TrainingThirteen from "#root/components/TrainingThirteen.vue";
 const title = `fhkjs
 gkjdf
@@ -71,7 +92,11 @@ const text2 = ref('')
 const firstName = ref('')
 const lastName = ref('')
 const email = ref('')
-const user = ref<{firstName:string,lastName:string,email:string }>({firstName:'',lastName:'',email:''})
+const user = ref<{firstName:string,lastName:string,email:string }>({firstName:'76',lastName:'jh',email:'gi'})
+const arr = ref([{text:'1fsdfd'}, {text:'fsdfd'}])
+const userId = ref(12)
+const userName = ref('Ivan')
+const userEmail = ref('jkjk@klk')
 </script>
 
 <style scoped>

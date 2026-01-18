@@ -1,4 +1,4 @@
-<template>
+<template :style="userStyle">
   <div>компонент UserForm для ввода
   </div>
   <!-- Создайте компонент UserForm для ввода:
@@ -21,6 +21,7 @@ email (v-model:email)
 </template>
 
 <script setup lang="ts">
+defineProps(['userStyle'])
 const user = defineModel<Record<string,string>>({default:{firstName:'',lastName:'',email:''}})
 // const firstName = defineModel<string>('firstName')
 // const lastName = defineModel<string>('lastName')

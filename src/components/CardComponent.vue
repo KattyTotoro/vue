@@ -24,6 +24,6 @@
 defineProps(['title', 'userStyle'])
 const num = 7
 const str = `sfbkfskjfd'${num}k\tadsdsada\nsdfdsfds`
-console.log(str)
+// console.log(str)
 </script>
 
