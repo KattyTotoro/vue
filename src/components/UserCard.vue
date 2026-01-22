@@ -31,7 +31,7 @@ import { ref } from 'vue'
 defineProps({
   userId: {type:Number, required: true},
   userName: {type:String, required: true},
-  userEmail: {type:String, required: false},
+  userEmail: {type:String, required: false, default:''},
 })
 
 
