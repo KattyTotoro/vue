@@ -30,8 +30,8 @@
   символы в нижнем регистре
   </p>
 
-  <p :class="number?'color-green':'color-red'">
-  <img :class="number?'visible':'invisible'" src="/images/light2.webp" width="40" alt="" style="margin-bottom: -10px;">
+  <p :class="numberIncludes?'color-green':'color-red'">
+  <img :class="numberIncludes?'visible':'invisible'" src="/images/light2.webp" width="40" alt="" style="margin-bottom: -10px;">
   цифры
   </p>
 
@@ -47,39 +47,54 @@
 </template>
 
 <script setup lang="ts">
+import { string, number } from 'yup'
 import { ref, watch } from 'vue'
 const userPassword = ref('')
 const isDisabled = ref(true)
 const topLetter = ref(false)
 const lowLetter = ref(false)
-const number = ref(false)
+const numberIncludes = ref(false)
 const minLength = ref(false)
 
 
 watch(userPassword, async (pass)=>{
 
-  const topLetterTest = new RegExp(/[A-Z]/)
-  topLetter.value = topLetterTest.test(pass)
+  let minSchema = string().required().min(8)
+  minLength.value = minSchema.isValidSync(pass)
+  let topSchema = string().required().matches(/[A-Z]/)
+  topLetter.value = topSchema.isValidSync(pass)
+  let lowSchema = string().required().matches(/[a-z]/)
+  lowLetter.value = lowSchema.isValidSync(pass)
+  let digitsSchema = string().required().matches(/[0-9]/)
+  numberIncludes.value = digitsSchema.isValidSync(pass)
 
-  const lowLetterTest = new RegExp(/[a-z]/)
-  lowLetter.value = lowLetterTest.test(pass)
 
-  const numberTest = new RegExp(/[0-9]/)
-  number.value = numberTest.test(pass)
+  // const topLetterTest = new RegExp(/[A-Z]/)
+  // topLetter.value = topLetterTest.test(pass)
 
-  // const minLengthTest = new RegExp(/.{8,}/)
-  // minLength.value = minLengthTest.test(pass)
-  minLength.value = pass.length>=8
+  // const lowLetterTest = new RegExp(/[a-z]/)
+  // lowLetter.value = lowLetterTest.test(pass)
+
+  // const numberTest = new RegExp(/[0-9]/)
+  // numberIncludes.value = numberTest.test(pass)
+  // minLength.value = pass.length>=8
   
 
-  if(topLetter.value && lowLetter.value && number.value && minLength.value) {
+  if(topLetter.value && lowLetter.value && numberIncludes.value && minLength.value) {
     isDisabled.value = false
   } else {
     isDisabled.value = true
   }
 
+
+
+
+
+  // const minLengthTest = new RegExp(/.{8,}/)
+  // minLength.value = minLengthTest.test(pass)
+
 //   const checkIsDisabled = ()=>{
-//   if(topLetter.value == true && lowLetter.value == true && number.value == true && minLength.value == true) {
+//   if(topLetter.value == true && lowLetter.value == true && numberIncludes.value == true && minLength.value == true) {
 //     isDisabled.value = false
 //   }
 // }
